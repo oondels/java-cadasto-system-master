@@ -8,3 +8,5 @@ Nome: teste Email: soteste Idade: 100
 Nome: celu Email: greg Idade: gfe
 Nome: yhasmin Email: yhasminnataly@gmail.com Idade: 12
 Nome: edilson Email: edilson@gmail.com Idade: 39
+O evento acontecera no dia: 34 Estado: bahia Cidade: sanata Evento: Festas
+Nome: mercadoria Email: fef Idade: efe

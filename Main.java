@@ -66,8 +66,21 @@ public class Main {
                 case "4":
                     System.out.println("\t\tCadastro de Eventos");
 
-                    System.out.println("Evento: ");
+                    System.out.println("Qual o tipo de evento?\n\t1. Festas\n\t2. Esportivo\n\t3. Show\n\t");
                     String evento = leitura.nextLine();
+
+                    switch (evento) {
+                        case "1":
+                            evento = "Festas";
+                            break;
+                        case "2":
+                            evento = "Esportivo";
+                        case "3":
+                            evento = "Show";
+                        default:
+                            break;
+                    }    
+
                     System.out.println("Estado: ");
                     String estado = leitura.nextLine();
                     System.out.println("Cidade: ");
@@ -85,8 +98,25 @@ public class Main {
                     break;
 
                 case "5":
+                {
                     System.out.println("\t\tEventos cadastrados.\n");
                     new_evento.LerEventosCadastrados();
+
+                    System.out.println("\nDeseja participar de algum?\n1. Sim\n2. Não");
+                    int resposta_evento = leitura.nextInt();
+
+                    if (resposta_evento == 1) {
+                        System.out.println("Deseja participar de qualEvento?\nSelecione o número correspondente\n");
+                        int evento_selecionado = leitura.nextInt();
+                        
+                        System.out.println(new_evento.Evento_Selecao(evento_selecionado));
+                        System.out.println("Usuário cadastrado no evento con Sucesso!");
+                        }
+                        else{
+                            System.out.println("Voltando ao Menu...\n");
+                        }
+                    }
+
                     tempoEspera();
                     break;
 

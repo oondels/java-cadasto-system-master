@@ -1,14 +1,18 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
 
 public class CadastrarEvento {
     String path = "data/usuarios_cadastrados.txt";
     File cadastro_evento = new File(path);
     
+    String selecao;
     String estado;
     String cidade;
     String evento;
@@ -47,7 +51,7 @@ public class CadastrarEvento {
             br.write("O evento acontecera no dia: " + this.data + " ");
             br.write("Estado: " + this.estado + " ");
             br.write("Cidade: " + this.cidade + " ");
-            br.write("Evento: " + this.evento);
+            br.write("Tipo de Evento : " + this.evento);
             br.newLine();
 
             br.close();
@@ -75,7 +79,26 @@ public class CadastrarEvento {
         } catch(IOException e){
             System.out.println("Ocorreu um Erro!");
             e.printStackTrace();
-        }
-        
+        }    
+
     }
+    public String Evento_Selecao(int evento_selecionado) {
+        try{
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(path)));
+            String line = null;
+            int lineNumber = 0;
+            HashMap<Integer, String> lines = new HashMap<Integer, String>();
+
+            while ((line = bufferedReader.readLine()) != null) {
+            lines.put(lineNumber, line);
+            lineNumber++;
+            }
+            bufferedReader.close();
+            selecao = lines.get(evento_selecionado-1);
+        }catch(IOException e){
+            System.out.println("Ocorreu um Erro!");
+            e.printStackTrace();
+        }
+        return selecao;
+    } 
 }
