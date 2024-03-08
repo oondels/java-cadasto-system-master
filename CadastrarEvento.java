@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class CadastrarEvento {
-    String path = "G:/Meu Drive/Hendrius/1. Graduação/2.Unifacs Análise e Desenvolvimento de Sistemas/Programação de Soluções Computacionais/Atividades/Pratique 1/data/eventos_cadastrados.txt";
+    String path = "data/usuarios_cadastrados.txt";
     File cadastro_evento = new File(path);
     
     String estado;

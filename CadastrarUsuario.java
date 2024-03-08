@@ -10,7 +10,7 @@ public class CadastrarUsuario {
     private String email;
    	private String idade;
 
-    String path = "G:/Meu Drive/Hendrius/1. Graduação/2.Unifacs Análise e Desenvolvimento de Sistemas/Programação de Soluções Computacionais/Atividades/Pratique 1/data/usuarios_cadastrados.txt";
+    String path = "data/usuarios_cadastrados.txt";
     File cadastro = new File(path);
 
     public void setNome(String nomeusuario) {
