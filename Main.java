@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -13,6 +14,7 @@ public class Main {
         
         Scanner leitura = new Scanner(System.in);
         boolean key = true;
+        List lista_eventos = new ArrayList();
         String estados[] = {"Bahia", "Pernambuco"};
         
         while (key == true) {
@@ -110,6 +112,7 @@ public class Main {
                         int evento_selecionado = leitura.nextInt();
                         
                         System.out.println(new_evento.Evento_Selecao(evento_selecionado));
+                        lista_eventos.add(new_evento.Evento_Selecao(evento_selecionado));
                         System.out.println("Usuário cadastrado no evento con Sucesso!");
                         }
                         else{
@@ -117,6 +120,25 @@ public class Main {
                         }
                     }
 
+                    tempoEspera();
+                    break;
+                
+                case "6":
+                    System.out.println("\tEvento(s) que você esta cadastrado:");
+                    for(int i = 0; i < lista_eventos.size(); i++){
+                        System.out.println(i + ": " + lista_eventos.get(i));
+                    }
+
+                    System.out.println("Deseja cancelar a presença em algum evento?\n1. Sim\n2. Nao");
+                    int cancelar_evento = leitura.nextInt();
+                    if (cancelar_evento == 1) {
+                        System.out.println("Selecione o numero correspondente que deseja cancelar.");
+                        int opcao_cancelar = leitura.nextInt();
+                        lista_eventos.remove(opcao_cancelar);
+                    }
+                    else {
+                        System.out.println("Voltando ao Menu...\n");
+                    }
                     tempoEspera();
                     break;
 
